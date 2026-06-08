@@ -1,0 +1,2 @@
+.ticket-card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 12px; } .status-aberto { border-left: 4px solid green; } .status-em_andamento {
+    border-left: 4px solid orange; } .status fechado {border-left: 4px solid gray; }

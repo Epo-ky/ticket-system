@@ -1,0 +1,12 @@
+<div>   
+    <h2>Tickets</h2>
+    <div *ngFor="let ticket of tickets">
+        <h3>{{ ticket.titulo }}</h3>
+        <p>{{ ticket.descricao }}</p>
+        <span>{{ ticket.status }}</span>
+    </div>
+<div class="ticket-card" [class]="'status-' + ticket.status" *ngFor="let ticket of tickets">
+    <h3>{{ ticket.titulo }}</h3>
+    <p>{{ ticket.descricao }}</p>
+    <span>{{ ticket.status }}</span>
+</div>
