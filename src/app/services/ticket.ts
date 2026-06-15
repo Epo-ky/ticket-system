@@ -14,4 +14,15 @@ export class TicketService {
     return this.tickets;
   }
 
+  addTicket(titulo: string, descricao: string) {
+  const novo: Ticket = {
+    id: this.tickets.length + 1,
+    titulo,
+    descricao,
+    status: 'aberto',
+    criadoEm: new Date()
+  };
+  this.tickets.push(novo);
+}
+
 }
