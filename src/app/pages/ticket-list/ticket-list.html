@@ -1,24 +1,36 @@
 <div class="board">
   <h1>Ticket System</h1>
   <button routerLink="/tickets/novo">+ Novo Ticket</button>
+
   <div class="columns">
-    <div class="column">
+    <div class="column" cdkDropList #abertaLista="cdkDropList"
+      [cdkDropListData]="abertos"
+      [cdkDropListConnectedTo]="[andamentoLista, fechadaLista]"
+      (cdkDropListDropped)="drop($event)">
       <h2>Aberto</h2>
-      <div class="card" *ngFor="let ticket of getByStatus('aberto')">
+      <div class="card" *ngFor="let ticket of abertos" cdkDrag>
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
       </div>
     </div>
-    <div class="column">
+
+    <div class="column" cdkDropList #andamentoLista="cdkDropList"
+      [cdkDropListData]="emAndamento"
+      [cdkDropListConnectedTo]="[abertaLista, fechadaLista]"
+      (cdkDropListDropped)="drop($event)">
       <h2>Em Andamento</h2>
-      <div class="card" *ngFor="let ticket of getByStatus('em_andamento')">
+      <div class="card" *ngFor="let ticket of emAndamento" cdkDrag>
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
       </div>
     </div>
-    <div class="column">
+
+    <div class="column" cdkDropList #fechadaLista="cdkDropList"
+      [cdkDropListData]="fechados"
+      [cdkDropListConnectedTo]="[abertaLista, andamentoLista]"
+      (cdkDropListDropped)="drop($event)">
       <h2>Fechado</h2>
-      <div class="card" *ngFor="let ticket of getByStatus('fechado')">
+      <div class="card" *ngFor="let ticket of fechados" cdkDrag>
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
       </div>
