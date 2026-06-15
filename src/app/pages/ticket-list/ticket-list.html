@@ -11,6 +11,7 @@
       <div class="card" *ngFor="let ticket of abertos" cdkDrag>
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
+        <button [routerLink]="['/tickets', ticket.id]">Ver detalhes</button>
       </div>
     </div>
 
@@ -22,6 +23,7 @@
       <div class="card" *ngFor="let ticket of emAndamento" cdkDrag>
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
+        <button [routerLink]="['/tickets', ticket.id]">Ver detalhes</button>
       </div>
     </div>
 
@@ -33,6 +35,7 @@
       <div class="card" *ngFor="let ticket of fechados" cdkDrag>
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
+        <button [routerLink]="['/tickets', ticket.id]">Ver detalhes</button>
       </div>
     </div>
   </div>

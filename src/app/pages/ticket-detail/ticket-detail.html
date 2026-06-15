@@ -1,0 +1,23 @@
+<div class="detail-container" *ngIf="ticket">
+  <button (click)="voltar()">← Voltar</button>
+
+  <div *ngIf="!editando">
+    <h1>{{ ticket.titulo }}</h1>
+    <p>{{ ticket.descricao }}</p>
+    <span class="status">{{ ticket.status }}</span>
+    <p class="data">Criado em: {{ ticket.criadoEm | date:'dd/MM/yyyy' }}</p>
+    <button (click)="editar()">✏️ Editar</button>
+  </div>
+
+  <div *ngIf="editando">
+    <input [(ngModel)]="tituloEdit" />
+    <textarea [(ngModel)]="descricaoEdit"></textarea>
+    <button (click)="salvar()">Salvar</button>
+    <button (click)="cancelar()">Cancelar</button>
+  </div>
+</div>
+
+<div *ngIf="!ticket">
+  <p>Ticket não encontrado.</p>
+  <button (click)="voltar()">← Voltar</button>
+</div>

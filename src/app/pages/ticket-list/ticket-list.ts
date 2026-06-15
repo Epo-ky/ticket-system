@@ -41,6 +41,12 @@ drop(event: CdkDragDrop<Ticket[]>) {
       event.previousIndex,
       event.currentIndex
     );
+
+    const ticket = event.container.data[event.currentIndex];
+
+    if (event.container.data === this.abertos) ticket.status = 'aberto';
+    else if (event.container.data === this.emAndamento) ticket.status = 'em_andamento';
+    else if (event.container.data === this.fechados) ticket.status = 'fechado';
   }
 }
 }
