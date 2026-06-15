@@ -15,5 +15,10 @@ export class TicketList {
 
   constructor(private ticketService: TicketService) {
     this.tickets = this.ticketService.getTickets();
+    
+  }
+
+  getByStatus(status:string): Ticket[] {
+    return this.tickets.filter(ticket => ticket.status === status);
   }
 }

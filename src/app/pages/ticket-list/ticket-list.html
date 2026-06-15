@@ -1,12 +1,26 @@
-<div>   
-    <h2>Tickets</h2>
-    <div *ngFor="let ticket of tickets">
+<div class="board">
+  <h1>Ticket System</h1>
+  <div class="columns">
+    <div class="column">
+      <h2>Aberto</h2>
+      <div class="card" *ngFor="let ticket of getByStatus('aberto')">
         <h3>{{ ticket.titulo }}</h3>
         <p>{{ ticket.descricao }}</p>
-        <span>{{ ticket.status }}</span>
+      </div>
     </div>
-<div class="ticket-card" [class]="'status-' + ticket.status" *ngFor="let ticket of tickets">
-    <h3>{{ ticket.titulo }}</h3>
-    <p>{{ ticket.descricao }}</p>
-    <span>{{ ticket.status }}</span>
+    <div class="column">
+      <h2>Em Andamento</h2>
+      <div class="card" *ngFor="let ticket of getByStatus('em_andamento')">
+        <h3>{{ ticket.titulo }}</h3>
+        <p>{{ ticket.descricao }}</p>
+      </div>
+    </div>
+    <div class="column">
+      <h2>Fechado</h2>
+      <div class="card" *ngFor="let ticket of getByStatus('fechado')">
+        <h3>{{ ticket.titulo }}</h3>
+        <p>{{ ticket.descricao }}</p>
+      </div>
+    </div>
+  </div>
 </div>
