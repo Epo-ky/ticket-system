@@ -43,6 +43,7 @@ editar() {
 salvar() {
   this.ticket!.titulo = this.tituloEdit;
   this.ticket!.descricao = this.descricaoEdit;
+  this.ticket!.atualizadoEm = new Date();
   this.editando = false;
 }
 

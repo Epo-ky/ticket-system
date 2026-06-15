@@ -6,6 +6,9 @@
     <p>{{ ticket.descricao }}</p>
     <span [class]="'status-' + ticket.status">{{ ticket.status }}</span>
     <p class="data">Criado em: {{ ticket.criadoEm | date:'dd/MM/yyyy' }}</p>
+    <p class="data" *ngIf="ticket.atualizadoEm">
+  Atualizado em: {{ ticket.atualizadoEm | date:'dd/MM/yyyy HH:mm' }}
+</p>
     <button class="btn-editar" (click)="editar()">✏️ Editar</button>
   </div>
 

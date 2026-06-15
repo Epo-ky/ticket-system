@@ -4,4 +4,5 @@ export interface Ticket {
   descricao: string;
   status: 'aberto' | 'em_andamento' | 'fechado';
   criadoEm: Date;
+  atualizadoEm?: Date;
 }
