@@ -6,14 +6,14 @@
     <p>{{ ticket.descricao }}</p>
     <span class="status">{{ ticket.status }}</span>
     <p class="data">Criado em: {{ ticket.criadoEm | date:'dd/MM/yyyy' }}</p>
-    <button (click)="editar()">✏️ Editar</button>
+    <button class="btn-editar" (click)="editar()">✏️ Editar</button>
   </div>
 
   <div *ngIf="editando">
     <input [(ngModel)]="tituloEdit" />
     <textarea [(ngModel)]="descricaoEdit"></textarea>
-    <button (click)="salvar()">Salvar</button>
-    <button (click)="cancelar()">Cancelar</button>
+    <button class="btn-salvar" (click)="salvar()">Salvar</button>
+    <button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
   </div>
 </div>
 
