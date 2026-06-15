@@ -10,6 +10,7 @@
   Atualizado em: {{ ticket.atualizadoEm | date:'dd/MM/yyyy HH:mm' }}
 </p>
     <button class="btn-editar" (click)="editar()">✏️ Editar</button>
+    <button class="btn-deletar" (click)="deletar()">🗑️ Deletar</button>
   </div>
 
   <div *ngIf="editando">

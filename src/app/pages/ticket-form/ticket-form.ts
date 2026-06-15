@@ -22,4 +22,9 @@ export class TicketForm {
     this.ticketService.addTicket(this.titulo, this.descricao);
     this.router.navigate(['/tickets']);
   }
+
+  voltar() {
+  this.router.navigate(['/tickets']);
+}
+
 }

@@ -25,4 +25,8 @@ export class TicketService {
   this.tickets.push(novo);
 }
 
+deleteTicket(id: number) {
+  this.tickets = this.tickets.filter(t => t.id !== id);
+}
+
 }

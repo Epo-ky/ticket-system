@@ -50,4 +50,12 @@ salvar() {
 cancelar() {
   this.editando = false;
 }
+
+deletar() {
+  if (confirm('Tem certeza que deseja deletar este ticket?')) {
+    this.ticketService.deleteTicket(this.ticket!.id);
+    this.router.navigate(['/tickets']);
+  }
+}
+
 }

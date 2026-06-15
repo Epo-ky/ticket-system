@@ -13,6 +13,27 @@
   margin: 0 auto;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
+.voltar-btn {
+  display: inline-block;
+  margin: 16px 0 16px 16px;
+  background: none;
+  border: 1px solid #0052cc;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #0052cc;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.voltar-btn:hover {
+  background: #e9f0ff;
+}
+
+.voltar-btn:hover {
+  background: #f4f5f7;
+}
+
 .form-container {
   max-width: 600px;
   margin: 40px auto;
